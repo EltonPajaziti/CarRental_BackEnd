@@ -20,6 +20,7 @@ CarRentalBackend is a backend API built with Express.js and MongoDB (Mongoose) f
 - JSON Web Tokens (JWT), cookie-parser, bcrypt
 
 ## Project Structure
+```
 CarRentalAPI/
 │
 ├── auth/
@@ -47,6 +48,7 @@ CarRentalAPI/
 ├── index.js
 ├── package.json
 └── README.md
+```
 
 ## Requirements
 - Node.js v18+
