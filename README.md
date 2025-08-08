@@ -29,7 +29,7 @@ CarRentalAPI/
 │
 ├── controller/
 │ ├── login.js
-  ├── logout.js
+|  ├── logout.js
 │ ├── signup.js
 │ ├── myProfile.js
 │ └── cars.js
