@@ -3,6 +3,7 @@ const express= require("express");
 const Connection= require("./database/db");
 
 const authRoute=require("./routes/auth");
+const carRoute=require("./routes/cars");
 const bodyParser= require("body-parser");
 const cookieParser = require ("cookie-parser");
 const app=express();
@@ -20,6 +21,7 @@ Connection();
 
 
 app.use("/api", authRoute);
+app.use("/api",carRoute);
 
 app.listen(PORT,()=>{
     console.log(`Server is running on PORT ${PORT}`);
