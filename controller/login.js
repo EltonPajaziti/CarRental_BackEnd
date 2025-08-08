@@ -16,7 +16,7 @@ try{
     const token= createSecretToken(user._id);
     res.cookie("token", token,{
         path:"/",
-        expires: new Date(Date.now() + 86400),
+        expires: new Date(Date.now() + 86400000),
     });
 
     res.json({token});
