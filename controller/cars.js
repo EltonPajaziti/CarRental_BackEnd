@@ -64,11 +64,38 @@ const deleteCar= async(req,res)=>{
     }
 }
 
+
+
+const rentalCars = async (req, res) => {
+  try {
+   // i marrum filtrat prej query, dmth pjeses pas ?
+    const { year, color, steering_type, number_of_seats, name } = req.query;
+
+    // 
+    const filter = {};
+    if (year) filter.year = Number(year); // psh ?year=2015
+    if (color) filter.color = color; // psh ?color=black
+    if (steering_type) filter.steering_type = steering_type; // automatic/manual
+    if (number_of_seats) filter.number_of_seats = Number(number_of_seats);
+if(name) filter.name= new RegExp(`^${name.trim()}`,"i");
+   
+
+    const cars = await Car.find(filter).sort({ price_per_day: 1 });
+
+    res.json(cars);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+
+
 module.exports={
 addCar,
 getAllCars,
 getCarByID,
 updateCar,
-deleteCar
+deleteCar,
+rentalCars
 
 };
